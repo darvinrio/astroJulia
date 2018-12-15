@@ -1,0 +1,30 @@
+g=open("/home/darvinrio/Documents/astro/iso.txt")
+f=readlines(g)
+n=length(f)
+x=Float64[]
+y=Float64[]
+for i=2:n
+        a=split(f[i])
+        if(length(a)==0)
+                continue
+        end
+        b=parse(Float64,a[25])
+        v=parse(Float64,a[26])
+        push!(y,b-v)
+        push!(x,v)
+end
+m=x
+o=y
+plot(y,x,
+        markersize=3,
+        linealpha=0,
+        markerstrokealpha=1,
+        markercolor=:red
+        #=, #plot hr dia
+        markershape=:circle,
+        xlabel="BV",
+        ylabel="V",
+        yflip=true,
+        markersize=3,
+        )=#
+        )
